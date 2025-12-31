@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quiz App</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="container glass-panel">
+        <!-- Landing Section -->
+        <section id="landing-section" class="active-section">
+            <h1 class="app-title">BrainStorm <span class="highlight">Quiz</span></h1>
+            <p class="subtitle">Challenge yourself with dynamic questions!</p>
+            
+            <form id="quiz-setup-form">
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" class="glass-input">
+                        <option value="general">General Knowledge</option>
+                        <option value="science">Science</option>
+                        <option value="history">History</option>
+                        <option value="technology">Technology</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="difficulty">Difficulty</label>
+                    <div class="difficulty-selector">
+                        <input type="radio" name="difficulty" id="easy" value="easy" checked>
+                        <label for="easy" class="diff-btn">Easy</label>
+                        
+                        <input type="radio" name="difficulty" id="medium" value="medium">
+                        <label for="medium" class="diff-btn">Medium</label>
+                        
+                        <input type="radio" name="difficulty" id="hard" value="hard">
+                        <label for="hard" class="diff-btn">Hard</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button">Start Quiz 🚀</button>
+            </form>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="hidden-section">
+            <div class="quiz-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="header-info">
+                    <span id="question-count">Question 1/5</span>
+                    <div class="timer-badge">
+                        <span class="timer-icon">⏳</span>
+                        <span id="timer">15</span>s
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text">Loading question...</h2>
+                <div class="options-grid" id="options-container">
+                    <!-- Options injected via JS -->
+                </div>
+            </div>
+            
+            <div class="quiz-footer">
+               <button id="next-btn" class="nav-button" disabled>Next ➜</button>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section" class="hidden-section">
+            <h2 class="result-title">Quiz Completed! 🎉</h2>
+            <div class="score-card">
+                <div class="score-circle">
+                    <span id="final-score">0</span>
+                    <span class="score-label">Score</span>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item correct">
+                        <span class="stat-val" id="correct-count">0</span>
+                        <span class="stat-label">Correct</span>
+                    </div>
+                    <div class="stat-item wrong">
+                        <span class="stat-val" id="wrong-count">0</span>
+                        <span class="stat-label">Wrong</span>
+                    </div>
+                    <div class="stat-item time">
+                        <span class="stat-val" id="avg-time">0s</span>
+                        <span class="stat-label">Avg Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+            <button id="restart-btn" class="cta-button secondary">Play Again ↺</button>
+        </section>
+    </div>
+
+    <div class="footer-credit">
+        <p>Made by <span class="credit-name">Sayak Mukherjee</span> ✨</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
