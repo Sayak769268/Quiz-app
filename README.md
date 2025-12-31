@@ -105,16 +105,6 @@ The script will:
 
 ---
 
-## 📝 Submission Guidelines
-
-For evaluation/submission purposes, ensure the following artifacts are prepared:
-
-1.  **Source Code**: The complete repository link.
-2.  **Test Report**: Compile the generated **Screenshots** and **Console Logs** into a PDF.
-3.  **Video Evidence**: A screen recording of the automation script executing successfully.
-
----
-
 ## 👨‍💻 Credits
 
 **Developed by Sayak Mukherjee**  
