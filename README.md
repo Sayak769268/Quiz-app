@@ -118,7 +118,6 @@ For evaluation/submission purposes, ensure the following artifacts are prepared:
 ## 👨‍💻 Credits
 
 **Developed by Sayak Mukherjee**  
-*Full Stack Developer & QA Engineer*
 
 ---
 *© 2025 Dynamic Quiz Project. All Rights Reserved.*
